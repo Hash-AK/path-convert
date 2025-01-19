@@ -13,6 +13,7 @@ Here is the usage as descibed by the tool itself :
 >  path-convert --toUnix "C:\Users\Username\Documents"
 >  path-convert --toDOS "/home/user/documents"
     
-I hope this can help you!
-
+I hope this can help you!  
+I used AI to debug and tune my code, but it's coded in majority by me, with some code from w3school, StackOverflow and the like.  
+This is my first code in JS btw 
 Made for [Hackclub](https://hackclub.com)'s minus-twelve YSWS
