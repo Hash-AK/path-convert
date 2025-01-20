@@ -17,5 +17,8 @@ Please **ONLY** use single-quotes when giving the path in arguments, as it work 
 
 I hope this can help you!
 
+This is also shared on [NPM](https://www.npmjs.com/package/path-convert-js).  
+To install simply do : npm i path-convert-js  
+
 I used AI to debug and tune my code, but it's coded in majority by me, with some code from w3school, StackOverflow and the like.
 Made for [Hackclub](https://hackclub.com)'s minus-twelve YSWS
