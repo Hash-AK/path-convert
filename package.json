@@ -1,8 +1,8 @@
 {
-  "name": "path-convert",
-  "version": "1.0.0",
+  "name": "path-convert-js",
+  "version": "1.0.4",
   "bin": {
-    "path-convert": "./index.js"
+    "path-convert-js": "./index.js"
   },
   "description": "A JavaScript tool to easily convert paths between DOS, Unix, and escaped formats",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "cli"
   ],
   "author": "Hash-AK",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "https://github.com/Hash-AK/path-convert"

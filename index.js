@@ -42,7 +42,8 @@ var path = process.argv[3]
 let result
 function showUsage() {
     console.log(`
-Usage: path-convert <method> "path"
+Usage: path-convert <method> 'path'
+
 
 Methods:
   --escape   : Escape backslashes in DOS
@@ -50,8 +51,8 @@ Methods:
   --toDOS    : Convert to DOS path
 
 Examples:
-  path-convert --toUnix "C:\\Users\\Username\\Documents"
-  path-convert --toDOS "/home/user/documents"
+  path-convert --toUnix 'C:\\Users\\Username\\Documents'
+  path-convert --toDOS '/home/user/documents'
     `)
 }
 function convertPath(fmethod, fpath){
@@ -59,13 +60,15 @@ function convertPath(fmethod, fpath){
     switch(fmethod) {
         case "escape":
             console.log("\x1b[46mEscape mode\x1b[0m")
-            console.log("Input path : ", fpath)
+            console.log("")
+            console.log("\x1b[4mInput path : ", fpath + "\x1b[0m")
             fresult = fpath.replace(/\\/g, "\\\\")
             return fresult
             
         case "Unix":
             console.log("\x1b[46mTo Unix mode\x1b[0m")
-            console.log("Input path : ", fpath)
+            console.log("")
+            console.log("\x1b[4mInput path : ", fpath + "\x1b[0m")
             fpath = fpath.replace(/^[a-zA-Z]:/i, "")
             fpath = fpath.replace(/\\\\/g, "/")
             fresult = fpath.replace(/\\/g, "/")
@@ -75,7 +78,8 @@ function convertPath(fmethod, fpath){
             return fresult
         case "DOS":
             console.log("\x1b[46mTo DOS mode\x1b[0m")
-            console.log("Input path : ", fpath)
+            console.log("")
+            console.log("\x1b[4mInput path : ", fpath + "\x1b[0m")
             if (fpath.startsWith("//")){
                 console.log("Network path")
                 fpath = fpath.slice(2)
@@ -103,15 +107,18 @@ if (method){
         switch(method) {
             case "--escape":
                 result = convertPath("escape", path)
-                console.log("Result: ", result)  
+                console.log("")
+                console.log("\x1b[32mResult: ", result + "\x1b[0m")  
                 break;
             case "--toUnix":
                 result = convertPath("Unix", path)
-                console.log("Result: ", result)  
+                console.log("")
+                console.log("\x1b[32mResult: ", result+ "\x1b[0m")  
                 break;
             case "--toDOS":
                 result = convertPath("DOS", path)
-                console.log("Result: ", result)
+                console.log("")
+                console.log("\x1b[32mResult: ", result + "\x1b[0m")
                 break;
             default:
             console.log("\x1b[41m Not a valid method! Please give one of the following method type : --escape, --toUnix or --toDOS \x1b[0m")
@@ -133,3 +140,7 @@ else {
     showUsage()
     process.exit(1)
 }
+module.exports = {
+    convertPath,
+    showUsage
+};
